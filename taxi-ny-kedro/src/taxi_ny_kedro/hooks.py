@@ -34,8 +34,27 @@ from kedro.framework.hooks import hook_impl
 from kedro.io import DataCatalog
 from kedro.versioning import Journal
 
+from kedro.pipeline import Pipeline
+
+from .pipelines.dataEng.pipeline import dataEng_pipeline
+# from .pipelines import dataEng as de
+
 
 class ProjectHooks:
+    @hook_impl
+    def register_pipelines(self) -> Dict[str,Pipeline]:
+        data_engineering_pipeline = dataEng_pipeline()
+
+        return {
+            "de":data_engineering_pipeline,
+            "__default__": data_engineering_pipeline
+        }
+
+
+
+
+
+
     @hook_impl
     def register_config_loader(
         self, conf_paths: Iterable[str], env: str, extra_params: Dict[str, Any],
