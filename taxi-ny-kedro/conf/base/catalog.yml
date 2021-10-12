@@ -5,7 +5,7 @@
 
 yellow_tripData:
     type: pandas.CSVDataSet
-    filepath: data/01_raw/yellow_tripdata_2018-12.csv
+    filepath: data/01_raw/yellow_tripdata.csv
     # load_args:
     #     sep: ","
     # save_args:
@@ -15,4 +15,12 @@ yellow_tripData:
 
 yellow_tripDataLimited:
     type: pandas.CSVDataSet
-    filepath: data/01_raw/yellow_tripdata_2018-12_limited.csv
+    filepath: data/01_raw/yellow_tripdata_limited.csv
+
+yellow_tripDataRenamed:
+    type: pandas.CSVDataSet
+    filepath: data/01_raw/yellow_tripdata_Renamed.csv
+
+yellow_tripDataCleaned:
+    type: pandas.CSVDataSet
+    filepath: data/01_raw/yellow_tripdata_Cleaned.csv
